@@ -1,25 +1,97 @@
-/* ... (mantém o que já tinha e adiciona/ajusta isso) */
-
-.logo-img {
-  width: 280px;                 /* aumentei pra destacar a nova imagem */
-  height: auto;
-  margin: 0 auto 2rem;
-  display: block;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);  /* sombra dourada pra combinar com a imagem */
-  background: rgba(0,0,0,0.4);   /* fundo escuro pra realçar */
-  padding: 10px;
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo-header {
+.bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1a0000, #000);
+  z-index: -2;
+}
+
+.card {
+  background: rgba(20,20,20,0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 360px;
+  max-width: 90%;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+  border: 1px solid #ff0044;
+  text-align: center;
+}
+
+.logo {
   width: 180px;
   height: auto;
+  margin-bottom: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 25px rgba(255,0,68,0.6);
 }
 
-/* Fundo mais integrado com a nova vibe vermelha/dourada */
-.background {
-  background: linear-gradient(rgba(20,0,0,0.7), rgba(0,0,0,0.9)), url("/bg-calgarotto.jpg") center/cover no-repeat;
-  filter: brightness(0.5) contrast(1.1);
+.logo-small {
+  width: 80px;
+  height: auto;
 }
+
+h1 {
+  color: #ff0044;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: #111;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primary { background: #ff0044; color: white; }
+.primary:hover { background: #cc0037; transform: translateY(-2px); }
+
+.logout { background: #444; color: white; }
+.logout:hover { background: #666; }
+
+.balance-box {
+  background: rgba(255,0,68,0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  border: 1px solid #ff0044;
+}
+
+.balance {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ff0044;
+}
+
+.actions { display: flex; gap: 1rem; margin: 1.5rem 0; }
+.actions button { flex: 1; }
+
+.msg { margin-top: 1rem; min-height: 1.5rem; }
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
