@@ -1,0 +1,135 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("bg-calgarotto.jpg") center/cover no-repeat;  /* mude o nome se for diferente */
+  filter: brightness(0.4) blur(3px);
+  z-index: -2;
+}
+
+.logo-img {
+  width: 140px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+  filter: drop-shadow(0 0 15px rgba(0,255,170,0.7));
+}
+
+.logo-header {
+  width: 100px;
+  height: auto;
+}
+
+.login-container, .dashboard {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 400px;
+  max-width: 92%;
+  margin: 50px auto;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,255,170,0.15);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.8rem;
+  color: #00ffaa;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.05rem;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+input::placeholder { color: rgba(255,255,255,0.5); }
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+button:not(.primary):not(.logout-btn) {
+  background: #333;
+  color: white;
+}
+
+button.primary {
+  background: #00aaff;
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.logout-btn {
+  background: #ff4444 !important;
+  color: white !important;
+  width: auto;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance-card {
+  background: rgba(0,0,0,0.45);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.balance {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #00ffaa;
+  margin-top: 0.5rem;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.operation-area {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  min-height: 120px;
+}

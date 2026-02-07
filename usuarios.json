@@ -1,0 +1,24 @@
+[
+  {
+    "nome": "kaiky",
+    "senha": "123",
+    "saldo": 100
+  },
+  {
+    "nome": "",
+    "senha": "$2b$10$59l8OPc10PBSMMydGv7GM.8etsoUaaZ60yAthfZ.eCNdyk6p.Np7m",
+    "saldo": 11000
+  },
+  {
+    "nome": "lucas",
+    "senha": "$2b$10$/E3GmbUJl5olaGDX3K2MDOk97UGrExSbjiuwRq6MLmJcPuscUL0oW",
+    "saldo": 489000000000000000
+  },
+  {
+    "nome": "admin",
+    "senha": "$2b$10$6batxX.oTzpQhYG0z00AQeFZwDRiE338lRL7gMX4yKZCuov708kzq",
+    "saldo": 0,
+    "role": "admin",
+    "historico": []
+  }
+]

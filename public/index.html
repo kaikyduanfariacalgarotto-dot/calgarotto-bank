@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Banco Digital</h1>
+
+  <div id="login">
+    <input id="nome" placeholder="Usuário">
+    <input id="senha" type="password" placeholder="Senha">
+    <button onclick="login()">Login</button>
+    <button onclick="registrar()">Criar conta</button>
+  </div>
+
+  <div id="conta" style="display:none">
+    <h2>Bem-vindo, <span id="user"></span></h2>
+    <p>Saldo: R$ <span id="saldo"></span></p>
+
+    <input id="valor" placeholder="Valor">
+    <button onclick="depositar()">Depositar</button>
+  </div>
+
+  <p id="msg"></p>
+
+  <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calgarotto Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay"></div>
