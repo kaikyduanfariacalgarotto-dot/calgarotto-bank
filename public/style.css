@@ -1,97 +1,24 @@
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  background: #0a0a0a;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bg {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #1a0000, #000);
-  z-index: -2;
-}
-
-.card {
-  background: rgba(20,20,20,0.9);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2.5rem;
-  width: 360px;
-  max-width: 90%;
-  box-shadow: 0 0 40px rgba(0,0,0,0.8);
-  border: 1px solid #ff0044;
-  text-align: center;
-}
-
-.logo {
-  width: 180px;
+/* Ajustes para a nova logo Goku */
+.logo-img {
+  width: 240px;
   height: auto;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255,0,68,0.6);
+  margin: 0 auto 1.8rem;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #ff4444, 0 0 80px #ff0000; /* aura vermelha Saiyajin God */
+  background: rgba(0,0,0,0.5);
+  padding: 12px;
 }
 
-.logo-small {
-  width: 80px;
+.logo-header {
+  width: 140px;
   height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ff4444;
 }
 
-h1 {
-  color: #ff0044;
-  margin-bottom: 1.5rem;
-  font-size: 2.2rem;
+/* Se quiser deixar o fundo mais vermelho/neon */
+.background {
+  background: linear-gradient(rgba(30,0,0,0.85), rgba(0,0,0,0.95)), url("/bg-calgarotto.jpg") center/cover no-repeat;
+  filter: brightness(0.45) contrast(1.1) blur(2px);
 }
-
-input {
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0;
-  border-radius: 10px;
-  border: 1px solid #444;
-  background: #111;
-  color: white;
-  font-size: 1.1rem;
-}
-
-.btn {
-  width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.primary { background: #ff0044; color: white; }
-.primary:hover { background: #cc0037; transform: translateY(-2px); }
-
-.logout { background: #444; color: white; }
-.logout:hover { background: #666; }
-
-.balance-box {
-  background: rgba(255,0,68,0.1);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin: 1.5rem 0;
-  border: 1px solid #ff0044;
-}
-
-.balance {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #ff0044;
-}
-
-.actions { display: flex; gap: 1rem; margin: 1.5rem 0; }
-.actions button { flex: 1; }
-
-.msg { margin-top: 1rem; min-height: 1.5rem; }
-
-.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }

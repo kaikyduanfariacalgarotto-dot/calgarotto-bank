@@ -7,34 +7,42 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg"></div>
+  <div class="background"></div>
 
-  <div class="card login" id="loginCard">
-    <img src="/logo-finance.jpg" alt="Calgarotto Finance" class="logo">
+  <!-- Tela de Login -->
+  <div class="login-container" id="loginScreen">
+    <img src="https://vermelho.org.br/wp-content/uploads/2021/05/Design-sem-nome-41.jpg" alt="Calgarotto Finance Logo" class="logo-img" />
     <h1>Calgarotto Finance</h1>
-    <input id="username" placeholder="Usuário" type="text">
-    <input id="password" placeholder="Senha" type="password">
-    <button class="btn primary" onclick="register()">Criar Conta</button>
-    <button class="btn" onclick="login()">Entrar</button>
-    <p id="msg" class="msg"></p>
+    <input type="text" id="username" placeholder="Usuário" autocomplete="off" />
+    <input type="password" id="password" placeholder="Senha" autocomplete="off" />
+    <button onclick="handleRegister()">Criar conta</button>
+    <button onclick="handleLogin()" class="primary">Entrar</button>
+    <p id="message"></p>
   </div>
 
-  <div class="card dashboard" id="dashboardCard" style="display:none">
-    <div class="header">
-      <img src="/logo-finance.jpg" alt="Logo" class="logo-small">
-      <span id="greeting"></span>
-      <button class="btn logout" onclick="logout()">Sair</button>
-    </div>
-    <div class="balance-box">
-      <h2>Saldo</h2>
-      <div class="balance">R$ <span id="balance">0,00</span></div>
-    </div>
-    <div class="actions">
-      <button class="btn" onclick="deposit()">Depositar</button>
-      <button class="btn" onclick="withdraw()">Sacar</button>
-    </div>
-    <div id="formArea"></div>
-    <p id="msgDash" class="msg"></p>
+  <!-- Dashboard -->
+  <div class="dashboard" id="dashboardScreen" style="display: none;">
+    <header>
+      <img src="https://vermelho.org.br/wp-content/uploads/2021/05/Design-sem-nome-41.jpg" alt="Logo" class="logo-header" />
+      <span id="userGreeting">Bem-vindo ao Calgarotto Finance</span>
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </header>
+
+    <main>
+      <div class="balance-card">
+        <h2>Saldo disponível - Calgarotto Finance</h2>
+        <div class="balance">R$ <span id="balanceValue">0,00</span></div>
+      </div>
+
+      <div class="actions">
+        <button onclick="showDepositForm()">Depositar</button>
+        <button onclick="showWithdrawForm()">Sacar</button>
+        <button onclick="showHistory()">Extrato</button>
+      </div>
+
+      <div id="operationArea" class="operation-area"></div>
+      <p id="messageDashboard"></p>
+    </main>
   </div>
 
   <script src="script.js"></script>
