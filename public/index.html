@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Banco Digital</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calgarotto Bank</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background"></div>
 
-  <h1>Banco Digital</h1>
-
-  <div id="login">
-    <input id="nome" placeholder="Usuário">
-    <input id="senha" type="password" placeholder="Senha">
-    <button onclick="login()">Login</button>
-    <button onclick="registrar()">Criar conta</button>
+  <!-- Tela de Login -->
+  <div class="login-container" id="loginScreen">
+    <img src="/logo-calgarotto.png" alt="Calgarotto Bank Logo" class="logo-img" />
+    <h1>Calgarotto Bank</h1>
+    <input type="text" id="username" placeholder="Usuário" autocomplete="off" />
+    <input type="password" id="password" placeholder="Senha" autocomplete="off" />
+    <button onclick="handleRegister()">Criar conta</button>
+    <button onclick="handleLogin()" class="primary">Entrar</button>
+    <p id="message"></p>
   </div>
 
-  <div id="conta" style="display:none">
-    <h2>Bem-vindo, <span id="user"></span></h2>
-    <p>Saldo: R$ <span id="saldo"></span></p>
+  <!-- Dashboard -->
+  <div class="dashboard" id="dashboardScreen" style="display: none;">
+    <header>
+      <img src="/logo-calgarotto.png" alt="Logo" class="logo-header" />
+      <span id="userGreeting">Bem-vindo(a)</span>
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </header>
 
-    <input id="valor" placeholder="Valor">
-    <button onclick="depositar()">Depositar</button>
+    <main>
+      <div class="balance-card">
+        <h2>Saldo disponível</h2>
+        <div class="balance">R$ <span id="balanceValue">0,00</span></div>
+      </div>
+
+      <div class="actions">
+        <button onclick="showDepositForm()">Depositar</button>
+        <button onclick="showWithdrawForm()">Sacar</button>
+        <button onclick="showHistory()">Extrato</button>
+      </div>
+
+      <div id="operationArea" class="operation-area"></div>
+      <p id="messageDashboard"></p>
+    </main>
   </div>
-
-  <p id="msg"></p>
 
   <script src="script.js"></script>
 </body>
-</html><!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Calgarotto Bank</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <div class="overlay"></div>
+</html>

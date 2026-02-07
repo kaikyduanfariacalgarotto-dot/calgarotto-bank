@@ -8,20 +8,20 @@ const balanceValue = document.getElementById("balanceValue");
 const userGreeting = document.getElementById("userGreeting");
 const operationArea = document.getElementById("operationArea");
 
-// Função auxiliar para mostrar mensagens
+// Mostra mensagem temporária
 function showMsg(el, text, isError = false) {
   el.innerText = text;
   el.style.color = isError ? "#ff6666" : "#00ffaa";
   setTimeout(() => el.innerText = "", 5000);
 }
 
-// Login
+// Login (corrigido: exige conta existente)
 async function handleLogin() {
   const nome = document.getElementById("username").value.trim();
   const senha = document.getElementById("password").value;
 
   if (!nome || !senha) {
-    showMsg(message, "Preencha usuário e senha", true);
+    showMsg(message, "Preenche usuário e senha, porra", true);
     return;
   }
 
@@ -36,17 +36,18 @@ async function handleLogin() {
 
     if (data.erro) {
       showMsg(message, data.erro, true);
-    } else {
-      usuarioAtual = data.nome;
-      userGreeting.innerText = `Olá, ${data.nome}`;
-      balanceValue.innerText = Number(data.saldo).toFixed(2).replace(".", ",");
-
-      loginScreen.style.display = "none";
-      dashboardScreen.style.display = "block";
-      message.innerText = "";
+      return;
     }
+
+    usuarioAtual = data.nome;
+    userGreeting.innerText = `Fala, ${data.nome}!`;
+    balanceValue.innerText = Number(data.saldo).toFixed(2).replace(".", ",");
+
+    loginScreen.style.display = "none";
+    dashboardScreen.style.display = "block";
+    message.innerText = "";
   } catch (err) {
-    showMsg(message, "Erro ao conectar com o servidor", true);
+    showMsg(message, "Deu pau na conexão", true);
   }
 }
 
@@ -56,7 +57,7 @@ async function handleRegister() {
   const senha = document.getElementById("password").value;
 
   if (!nome || !senha) {
-    showMsg(message, "Preencha usuário e senha", true);
+    showMsg(message, "Coloca usuário e senha, vai", true);
     return;
   }
 
@@ -69,6 +70,11 @@ async function handleRegister() {
 
     const data = await res.json();
     showMsg(message, data.msg || data.erro, !!data.erro);
+
+    if (data.msg) {
+      message.style.color = "#00ffaa";
+      setTimeout(() => message.innerText = "", 4000);
+    }
   } catch (err) {
     showMsg(message, "Erro ao conectar", true);
   }
@@ -78,7 +84,7 @@ async function handleRegister() {
 async function showDepositForm() {
   operationArea.innerHTML = `
     <input type="number" id="valorOperacao" placeholder="Valor do depósito" min="1" step="0.01" />
-    <button onclick="doDeposit()">Confirmar Depósito</button>
+    <button onclick="doDeposit()">Confirmar</button>
     <button onclick="cancelOperation()">Cancelar</button>
   `;
 }
@@ -102,7 +108,7 @@ async function doDeposit() {
       showMsg(messageDashboard, data.erro, true);
     } else {
       balanceValue.innerText = Number(data.saldo).toFixed(2).replace(".", ",");
-      showMsg(messageDashboard, "Depósito realizado com sucesso!");
+      showMsg(messageDashboard, "Depósito realizado!");
       operationArea.innerHTML = "";
     }
   } catch (err) {
@@ -110,11 +116,11 @@ async function doDeposit() {
   }
 }
 
-// Sacar (nova função)
+// Sacar
 async function showWithdrawForm() {
   operationArea.innerHTML = `
     <input type="number" id="valorOperacao" placeholder="Valor do saque" min="1" step="0.01" />
-    <button onclick="doWithdraw()">Confirmar Saque</button>
+    <button onclick="doWithdraw()">Confirmar</button>
     <button onclick="cancelOperation()">Cancelar</button>
   `;
 }
@@ -138,7 +144,7 @@ async function doWithdraw() {
       showMsg(messageDashboard, data.erro, true);
     } else {
       balanceValue.innerText = Number(data.saldo).toFixed(2).replace(".", ",");
-      showMsg(messageDashboard, "Saque realizado com sucesso!");
+      showMsg(messageDashboard, "Saque realizado!");
       operationArea.innerHTML = "";
     }
   } catch (err) {
@@ -146,12 +152,10 @@ async function doWithdraw() {
   }
 }
 
-// Cancelar operação
 function cancelOperation() {
   operationArea.innerHTML = "";
 }
 
-// Logout
 function logout() {
   usuarioAtual = "";
   balanceValue.innerText = "0,00";
