@@ -13,7 +13,7 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  background: linear-gradient(rgba(20,0,0,0.75), rgba(0,0,0,0.92)), url("https://vermelho.org.br/wp-content/uploads/2021/05/Design-sem-nome-41.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(20,0,0,0.75), rgba(0,0,0,0.92)), url("https://i.imgur.com/8qK5zL.jpg") center/cover no-repeat;
   filter: brightness(0.45) contrast(1.15) blur(3px);
   z-index: -2;
 }
